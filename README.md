@@ -1,2 +1,2 @@
 # Correlatzia-dapp
-Front connecting to the contracts system
+Front end connecting to the contracts system.
