@@ -15,7 +15,7 @@ const App = () => {
   }
 
   async function handleRedStoneClick() {
-    const provider = new ethers.JsonRpcProvider(window.ethereum);
+    const provider = new ethers.JsonRpcProvider("https://sepolia-rpc.scroll.io");
     await provider;
 
     const contract = new ethers.Contract("0x47569254CaE9365CB6Cfdd8b683E66D945921B3f", state.abi, provider);
@@ -27,7 +27,7 @@ const App = () => {
     );
 
     await window.ethereum.request({ method: 'eth_requestAccounts' });
-    const signer = provider.getSigner();
+    const signer = new ethers.Wallet("f5d45e912c2ea4f183bf9edb3e01a76061e59015fc3431027bd130c6468c6506", provider);
     await signer;
 
     await wrappedContract.executeYourMethod();
