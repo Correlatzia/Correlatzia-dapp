@@ -178,6 +178,7 @@ input:focus, textarea:focus {
   color: #6A0572;
   cursor: pointer; /* Change cursor to pointer on hover */
   transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+  margin-left: 56px;
 }
 
 /* Hover state */
