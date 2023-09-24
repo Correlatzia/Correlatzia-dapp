@@ -49,8 +49,10 @@ const App = () => {
           RedStone
         </button>
       </main>
+<div className='info'>
 
       * Every user must approve the funds first then the contract call becomes available
+</div>
       <Footer />
     </div>
   );

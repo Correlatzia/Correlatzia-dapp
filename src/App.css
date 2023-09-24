@@ -70,30 +70,48 @@
 }
 
 /* src/App.css */
-.button {
+button {
   background-color: #ffbdff;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
+  color: #300036;
   display: inline-block;
   border-radius: 5px;
   font-size: 16px;
+  font-weight: bold;
   transition: background-color 0.3s;
 }
 
-.button:hover {
+button:hover {
   background-color: #ffcbcb;
 }
 
-label{
-background-color: #ffbdff;
-margin-right: 8px;
+label {
+  background-color: #ffbdff;
+  background-image: linear-gradient(45deg, #ffbdff, #d79ce5); /* Gradient background for a dynamic look */
+  border-radius: 8px; /* Rounded corners */
+  padding: 5px 10px; /* Padding around the text */
+  color: #6A0572; /* Contrasting text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+  margin-right: 8px;
 }
+
 
 .App-link {
   color: #61dafb;
+}
+
+.info {
+  margin-top: 24px;
+  background-color: #ffbdff;
+  background-image: linear-gradient(45deg, #ffbdff, #d79ce5); /* Gradient background for a dynamic look */
+  border-radius: 8px; /* Rounded corners */
+  padding: 5px 10px; /* Padding around the text */
+  color: #6A0572; /* Contrasting text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
 }
 
 .footer {
@@ -114,24 +132,68 @@ margin-right: 8px;
   flex-direction: column;
 }
 
+.tradeView > div {
+  text-align: left; /* Aligns the content of the divs to the left */
+  display: flex;    /* Makes the label and input/select/button align in a row */
+  align-items: center; /* Vertically centers the content within the div */
+}
+
+.tradeView > div:last-child {
+  justify-content: center; /* Centers the button horizontally */
+}
+
 .redstone {
   position: absolute;
   top: 90%;
 }
 
 /* src/App.css */
-input[type="text"], input[type="password"], textarea {
-  padding: 10px;
+input, textarea {
+  padding: 12px 15px; /* Increased padding for a more spacious look */
   border: 1px solid #AB47BC;
-  border-radius: 5px;
+  border-radius: 15px; /* Increased border-radius for a more rounded look */
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Added transition for box-shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
 }
 
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+input:focus, textarea:focus {
   border-color: #6A0572;
   outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow on focus for interactivity */
 }
+
+/* Modern Dropdown Style */
+.tradeView select {
+  appearance: none; /* Remove default appearance */
+  background-color: #ffbdff;
+  background-image: linear-gradient(45deg, #ffbdff, #d79ce5), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2' viewBox='0 0 4 5'%3E%3Cpath fill='%236A0572' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 1em top 50%, right 0.7em top 50%; /* Position the arrow */
+  background-size: auto, 1em; /* Size of the gradient and arrow */
+  border: 1px solid #AB47BC;
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px 30px 10px 10px; /* Padding with space for the arrow */
+  font-size: 16px;
+  color: #6A0572;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+/* Hover state */
+.tradeView select:hover {
+  background-color: #d79ce5;
+  border-color: #6A0572;
+}
+
+/* Focus state */
+.tradeView select:focus {
+  outline: none;
+  border-color: #6A0572;
+  box-shadow: 0 0 5px rgba(106, 5, 114, 0.5); /* Subtle box shadow for focus */
+}
+
+
 
 /* Styles for the header */
 .nav-header {
@@ -164,6 +226,10 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
   color: #AB47BC; /* Change color on hover */
 }
 
+h2 {
+  color: #3a1841;
+  font-size: 40px;
+}
 
 @keyframes App-logo-spin {
   from {

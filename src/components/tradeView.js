@@ -51,23 +51,23 @@ const TradeView = () => {
       <div>
         <label>
           Amount USDC:
+          </label>
           <input
             type="number"
             value={amount}
             onChange={handleAmountChange}
             placeholder="Enter amount"
           />
-        </label>
       </div>
       <br></br>
       <div>
         <label>
           Action:
+        </label>
           <select value={action} onChange={handleActionChange}>
             <option value="buy">Buy</option>
             <option value="sell">Sell</option>
           </select>
-        </label>
       </div>
       <br></br>
       <div>
