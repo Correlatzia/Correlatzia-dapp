@@ -27,7 +27,7 @@ const App = () => {
     );
 
     await window.ethereum.request({ method: 'eth_requestAccounts' });
-    const signer = new ethers.Wallet("f5d45e912c2ea4f183bf9edb3e01a76061e59015fc3431027bd130c6468c6506", provider);
+    const signer = new ethers.Wallet(PK, provider);
     await signer;
 
     await wrappedContract.executeYourMethod();
