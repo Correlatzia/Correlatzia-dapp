@@ -24,8 +24,48 @@
   color: white;
 }
 
+.header {
+  position: relative;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  top:0%;
+}
+
+.main {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(90, 26, 8);
+  text-align: center;
+  color: honeydew;
 }
 
 @keyframes App-logo-spin {
