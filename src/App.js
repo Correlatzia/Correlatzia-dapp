@@ -2,16 +2,23 @@ import React from 'react';
 import { ethers } from 'ethers';
 import Header from './components/header';
 import Footer from './components/footer';
+import TradeView from './components/tradeView';
 import './App.css';
 
-function App() {
+const App = () => {
   const { WrapperBuilder } = require("@redstone-finance/evm-connector");
+  const state = {
+    wrapperBuilder: WrapperBuilder,
+    contractABI: "",
+    usdc : "0x690000EF01deCE82d837B5fAa2719AE47b156697",
+    usdcABI : '[{"constant":false,"inputs":[{"name":"newImplementation","type":"address"}],"name":"upgradeTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newImplementation","type":"address"},{"name":"data","type":"bytes"}],"name":"upgradeToAndCall","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"implementation","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newAdmin","type":"address"}],"name":"changeAdmin","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_implementation","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"previousAdmin","type":"address"},{"indexed":false,"name":"newAdmin","type":"address"}],"name":"AdminChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"implementation","type":"address"}],"name":"Upgraded","type":"event"}]',
+  }
 
   async function handleRedStoneClick() {
-    const provider = new ethers.WebSocketProvider(window.ethereum);
+    const provider = new ethers.JsonRpcProvider(window.ethereum);
     await provider;
 
-    const contract = new ethers.Contract(address, abi, provider);
+    const contract = new ethers.Contract("0x47569254CaE9365CB6Cfdd8b683E66D945921B3f", state.abi, provider);
 
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService(
       {
@@ -31,23 +38,19 @@ function App() {
     } catch(err) {
       console.log('failed:', err);
     }
-    console.log("am jereeeeeeee");
   }
 
   return (
     <div className="App">
       <Header className="header"/>
       <main className='main'>
-        <button className="button" onClick={handleRedStoneClick}>
-          Deposit
-        </button>
-        <button className="button" onClick={handleRedStoneClick}>
-          Buy
-        </button>
+        <TradeView {...state}/>
         <button className="button" onClick={handleRedStoneClick}>
           RedStone
         </button>
       </main>
+
+      * Every user must approve the funds first then the contract call becomes available
       <Footer />
     </div>
   );
