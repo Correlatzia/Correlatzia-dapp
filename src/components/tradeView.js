@@ -59,6 +59,7 @@ const TradeView = () => {
           />
         </label>
       </div>
+      <br></br>
       <div>
         <label>
           Action:
@@ -68,6 +69,7 @@ const TradeView = () => {
           </select>
         </label>
       </div>
+      <br></br>
       <div>
         <button onClick={handleApproveClick}>
           {isApproved ? 'Submit' : 'Approve'}
