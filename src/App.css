@@ -89,6 +89,7 @@
 
 label{
 background-color: #ffbdff;
+margin-right: 8px;
 }
 
 .App-link {
@@ -117,6 +118,52 @@ background-color: #ffbdff;
   position: absolute;
   top: 90%;
 }
+
+/* src/App.css */
+input[type="text"], input[type="password"], textarea {
+  padding: 10px;
+  border: 1px solid #AB47BC;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  border-color: #6A0572;
+  outline: none;
+}
+
+/* Styles for the header */
+.nav-header {
+  background-color: #6A0572; /* Purple background */
+  padding: 10px 20px;
+}
+
+.nav-list {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display items side by side */
+  justify-content: space-between;
+  max-width: 300px; /* Adjust based on your preference */
+  margin: 0 auto; /* Center the navigation links */
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Bold text */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-link:hover {
+  color: #AB47BC; /* Change color on hover */
+}
+
 
 @keyframes App-logo-spin {
   from {

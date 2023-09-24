@@ -2,15 +2,16 @@ import React from 'react';
 
 function Header() {
   return (
-    <header>
+    <header className="nav-header">
       <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About Us</a></li>
+        <ul className="nav-list">
+          <li className="nav-item"><a href="/" className="nav-link">Home</a></li>
+          <li className="nav-item"><a href="/about" className="nav-link">About Us</a></li>
         </ul>
       </nav>
     </header>
   );
 }
+
 
 export default Header;
