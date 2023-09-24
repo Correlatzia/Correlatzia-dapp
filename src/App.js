@@ -45,7 +45,7 @@ const App = () => {
       <Header className="header"/>
       <main className='main'>
         <TradeView {...state}/>
-        <button className="button" onClick={handleRedStoneClick}>
+        <button className="redstone button" onClick={handleRedStoneClick}>
           RedStone
         </button>
       </main>

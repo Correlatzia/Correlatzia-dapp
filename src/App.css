@@ -37,6 +37,21 @@
   top:0%;
 }
 
+.header {
+  background: linear-gradient(to right, #6A0572, #AB47BC);
+  padding: 10px 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
 .main {
   display: flex; 
   justify-content: space-around;
@@ -52,6 +67,28 @@
   display: inline-block;
   border-radius: 5px;
   font-size: 16px;
+}
+
+/* src/App.css */
+.button {
+  background-color: #ffbdff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #ffcbcb;
+}
+
+label{
+background-color: #ffbdff;
 }
 
 .App-link {
@@ -72,8 +109,13 @@
 .tradeView {
   display: flex;
   align-content: space-around;
+  justify-content: left;
   flex-direction: column;
-  align-content: space-between;
+}
+
+.redstone {
+  position: absolute;
+  top: 90%;
 }
 
 @keyframes App-logo-spin {
